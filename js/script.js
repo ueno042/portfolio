@@ -3,7 +3,7 @@ $(function(){
 	var
 	  winW = $(window).width(),
 		winH = $(window).height(),
-		nav = $('#mainnav ul a'),
+		nav = $('#nav ul a'),
 		curPos = $(this).scrollTop();
 	
 	if (winW < 880){
@@ -34,17 +34,17 @@ $(function(){
 		timer = setTimeout(function(){
 			var
 				w = $(window).innerWidth(),
-				bg = $('.bg'),
+				bg = $('.photo'),
 				bgH = bg.height();
 			
 			if(w > 800){
 				$(function(){		
-			  	$(".vMid").css('height', bgH);
+			  	$(".text").css('height', bgH);
 				});
 			}
 			else{
 				$(function(){		
-			  	$(".vMid").css({'height':'auto','padding':'50px 20px'});
+			  	$(".text").css({'height':'auto','padding':'20px 20px'});
 				});
 			}		
 		});
@@ -63,10 +63,10 @@ $(function(){
 	$(window).on('scroll', function(){
 		var curPos = $(this).scrollTop();
 		if(curPos > 80){
-			$('#mainnav').addClass('changeNav');
+			$('#nav').addClass('changeNav');
 		}
 		else{
-			$('#mainnav').removeClass('changeNav');
+			$('#nav').removeClass('changeNav');
 		}
 	});
 
