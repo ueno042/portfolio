@@ -7,31 +7,100 @@
 	<link rel="stylesheet" href="css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 	<script src="js/script.js"></script>
+	<script src="js/text.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/jquery.bgswitcher.js"></script>
+	<script>
+		jQuery(function($) {
+    		$('.bg-slider').bgSwitcher({
+        		images: ['images/top.jpg','images/top2.jpg','images/top3.jpg'],
+        		interval: 6000, // 間隔 3000=3秒
+       			loop: true, // 切り替えを繰り返すか
+		        shuffle: true, // 順番をシャッフルするか
+        		effect: "drop", // エフェクトの種類(fade,blind,clip,slide,drop,hide)
+        		duration: 2000, // エフェクトの時間
+        		easing: "swing" // エフェクトのイージング(linear,swing)
+			    });
+		});
+	</script>
+	<script>
+		$(function() {
+		  $('.intro').addClass('go');
+
+		  $('.reload').click(function() {
+		    $('.intro').removeClass('go').delay(200).queue(function(next) {
+		      $('.intro').addClass('go');
+		      next();
+		    });
+
+		  });
+		})
+	</script>
 </head>
 
 <body>
 	<div id="nav">
+		<p id="menuWrap"><a id="menu"><span id="menuBtn"></span></a></p>
+		<div class="panel">
 		<ul>
-			<li><a href="#header">TOP</a></li>
-			<li><a href="#sec01">HELLO</a></li>
-			<li><a href="#sec02">CAREER</a></li>
-			<li><a href="#sec03">STRENGTH</a></li>
-			<li><a href="#sec04">VISION</a></li>
+			<li><a href="#sec01">TOP</a></li>
+			<li><a href="#sec02">HELLO</a></li>
+			<li><a href="#sec03">CAREER</a></li>
+			<li><a href="#sec04">STRENGTH</a></li>
+			<li><a href="#sec05">VISION</a></li>
 		</ul>
-	</div>
-
-	<!-- TOP -->
-	<header id="top">
-		<img src="https://raw.githubusercontent.com/ueno042/portfolio/master/images/top.jpg">
-		<div class="title">
-			<h1>Hello　It's me. To show off now!</h1>
 		</div>
-	</header>
+	</div>
 
 	<!-- #sec01 -->
 	<section id="sec01">
+	<div class="bg-slider">
+		<div class="title-box">
+			<!--
+			<h1><span class="hello">Hello It's me.  </span>
+			<span class="hello">To show off now!</span></h1>-->
+
+		<svg class="intro" viewbox="0 0 200 86">
+		  <text text-anchor="start" x="10" y="30" class="text text-stroke" clip-path="url(#text1)">Hello</text>
+		  <text text-anchor="start" x="10" y="50" class="text text-stroke" clip-path="url(#text2)">It's me.</text>
+		  <text text-anchor="start" x="10" y="70" class="text text-stroke" clip-path="url(#text3)">To show off now!</text>
+		  <text text-anchor="start" x="10" y="30" class="text text-stroke text-stroke-2" clip-path="url(#text1)">Hello</text>
+		  <text text-anchor="start" x="10" y="50" class="text text-stroke text-stroke-2" clip-path="url(#text2)">It's me.</text>
+		  <text text-anchor="start" x="10" y="70" class="text text-stroke text-stroke-2" clip-path="url(#text3)">To show off now!</text>
+		  <defs>
+		    <clipPath id="text1">
+		      <text text-anchor="start" x="10" y="30" class="text">Hello</text>
+		    </clipPath>
+		    <clipPath id="text2">
+		      <text text-anchor="start" x="10" y="50" class="text">It's me.</text>
+		    </clipPath>
+		    <clipPath id="text3">
+		      <text text-anchor="start" x="10" y="70" class="text">To show off now!</text>
+		    </clipPath>
+		  </defs>
+		</svg>
+		<div>
+		  <button class="reload">
+			  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 92.33 92.33" style="enable-background:new 0 0 92.33 92.33;" xml:space="preserve">
+				<g>
+				<path d="M70.598,16.753c-1.722-1.24-4.113-0.852-5.349,0.866c-1.242,1.716-0.853,4.113,0.865,5.35   c13.613,9.818,18.021,27.857,10.482,42.89c-4.082,8.138-11.088,14.202-19.726,17.066c-8.636,2.871-17.877,2.2-26.013-1.879   c-8.134-4.083-14.197-11.088-17.066-19.722c-2.866-8.642-2.197-17.877,1.886-26.014c4.958-9.89,14.458-16.779,25.413-18.429   c0.074-0.008,0.137-0.036,0.211-0.053l0.157,7.571c0.021,0.839,0.542,1.585,1.321,1.889c0.782,0.305,1.672,0.11,2.25-0.496   l10.904-11.379c0.794-0.828,0.764-2.142-0.062-2.933L44.492,0.577c-0.606-0.582-1.499-0.739-2.267-0.399   c-0.251,0.108-0.476,0.269-0.662,0.462c-0.372,0.389-0.585,0.919-0.579,1.479l0.151,7.212c-0.385-0.063-0.78-0.087-1.188-0.027   c-13.418,2.021-25.052,10.46-31.125,22.571C-1.499,52.451,6.85,77.584,27.424,87.901c5.989,3.005,12.362,4.429,18.646,4.429   c15.306,0,30.065-8.439,37.382-23.028C92.688,50.884,87.284,28.782,70.598,16.753z" fill="#404853"/>
+		 	  </svg>  reload
+		   </button>
+		</div>
+		</div>
+
+	</div>
+	</section>
+
+	<!-- #sec02 -->
+	<section id="sec02">
 		<h2>HELLO</h2>
-		<img src="images/prof.png">
+		<img src="images/prof.png" border="0" onMouseOver="this.src='images/prof2.jpg'" onMouseOut="this.src='images/prof.png'">
 		<div class="profile">
 			<h3>上野 菜々実(うえの ななみ)</h3>
 			<p>生年月日：1995/07/25<br>
@@ -42,26 +111,26 @@
 		</div>
 	</section>
 
-	<!-- #sec02 -->
-	<section id="sec02">
+	<!-- #sec03 -->
+	<section id="sec03">
 		<div class="wrap">
 			<p class="photo"><img src="images/career.jpg" alt=""></p>
 				<div class="box">
 					<div class="text">
 							<h2>CAREER</h2>
-							<p>
-							14歳　一番レフに出会い、撮影を始める<br>
+							<div class="p1">
+							14歳　一眼レフに出会い、撮影を始める<br>
 							16歳　Photoshopに出会い、レタッチを始める<br>
 							19歳　フォトスタジオでカメラマンのアルバイトを2年勤める<br>
 							20歳　大学の講義にて、HTMLに出会う<br>
 							21歳　自分でサイト制作をする<br>
 							24歳　実務にて、簡単なHTML修正を行う<br>
-							</p>
+							</div>
 					</div>
 				</div>
 		</div>
 
-		<div id="sec02-2" class="wrap">
+		<div id="sec03-2" class="wrap">
 			<p class="photo"><img src="images/career2.jpg" alt=""></p>
 			<div class="box">
 				<div class="text">
@@ -75,8 +144,8 @@
 		</div>
 	</section>
 
-	<!-- #sec03 -->
-	<section id="sec03">
+	<!-- #sec04 -->
+	<section id="sec04">
 		<h2>STRENGTH</h2>
 		<h3>好奇心</h3>
 		<div class="curiosity">
@@ -90,8 +159,8 @@
 		</div>
 	</section>
 
-	<!-- #sec04 -->
-	<section id="sec04">
+	<!-- #sec05 -->
+	<section id="sec05">
 		<div class="vision">
 			<img src="images/vision.jpg" alt="">
 				<div class="vision-txt">
